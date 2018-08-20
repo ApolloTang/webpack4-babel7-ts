@@ -1,11 +1,11 @@
 {
-  "name": "babel7-webpack4",
+  "name": "babel7-webpack4-ts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode none",
-    "dev": "webpack-dev-server --mode none "
+    "dev": "webpack-dev-server --mode "
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",
@@ -14,6 +14,7 @@
     "awesome-typescript-loader": "^5.2.0",
     "babel-loader": "8.0.0-beta.4",
     "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
     "typescript": "^3.0.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",

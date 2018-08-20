@@ -3,17 +3,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = ({env=[], mode='development'}={env:[], mode:'development'}) => {
   const config = {
     mode,
+    entry: "./src/index.js",
     devServer: {
-      open: true,
+      open: false,
       port: 9090
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
+    resolve: {
+      extensions: ['.ts', '.js'],
+    },
     module: {
       rules: [
         {
-          test: /\.js|.ts/,
+          test: /\.ts$/,
           exclude: /node_modules/,
-          use: [ 'babel-loader', 'awesome-typescript-loader' ]
+          loaders: ['babel-loader', 'awesome-typescript-loader']
+        },
+        {
+          test: /\.js$/,
+          loaders: 'source-map-loader',
+          enforce: "pre"
         }
       ]
     },
