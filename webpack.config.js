@@ -11,9 +11,9 @@ module.exports = ({env=[], mode='development'}={env:[], mode:'development'}) => 
     module: {
       rules: [
         {
-          test: /\.js/,
+          test: /\.js|.ts/,
           exclude: /node_modules/,
-          use: [ { loader: 'babel-loader' } ]
+          use: [ 'babel-loader', 'awesome-typescript-loader' ]
         }
       ]
     },
