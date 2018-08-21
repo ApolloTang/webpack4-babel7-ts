@@ -1,4 +1,5 @@
 dist
 node_modules
-NOTE*.note
+NOTE*
+*.note
 *.log

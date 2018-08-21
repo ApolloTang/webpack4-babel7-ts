@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode none",
-    "dev": "webpack-dev-server --mode none"
+    "dev": "webpack-dev-server --mode none",
+    "tsc": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-rc.1",

@@ -3,22 +3,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = ({env=[], mode='development'}={env:[], mode:'development'}) => {
   const config = {
     mode,
-    entry: "./src/index.js",
+    // entry: "./src/ts-entrypoint.ts", // commented out, so it is default to ./src/index.js
     devServer: {
       open: false,
       port: 9090
     },
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     resolve: {
-      extensions: ['.ts', '.js'],
+      extensions: ['.ts', '.js', '.json']
     },
     module: {
       rules: [
         {
           test: /\.ts$/,
           exclude: /node_modules/,
-          loaders: ['babel-loader', 'awesome-typescript-loader']
-        },
+          loaders: ['awesome-typescript-loader']
+        }
+        ,
         {
           test: /\.js$/,
           loaders: 'source-map-loader',
